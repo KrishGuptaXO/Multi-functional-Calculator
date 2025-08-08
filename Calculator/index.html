@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=SUSE&family=Winky+Rough:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="codes.js"></script>
+    <script src="script.js"></script>
+    <title>Calculator</title>
+</head>
+<body>
+    <header>
+        <nav id="navbar">
+            <div class="container">
+                <button data-target="basicsection" class="a">Standard</button>
+                <button data-target="tempsection" class="a">Temperature</button>
+                <button data-target="currsection" class="a">Currency</button>
+            </div>
+        </nav>
+    </header>
+    <section id="basicsection">
+        <input type="text" placeholder="0" id="inputbox">
+        <div class="btn-grid">
+                <button>%</button>
+                <button>CE</button>
+                <button>AC</button>
+                <button>&#9003;</button>
+                <button>π</button>
+                <button>x²</button>
+                <button>√</button>
+                <button>/</button>
+                <button>7</button>
+                <button>8</button>
+                <button>9</button>
+                <button>*</button>
+                <button>4</button>
+                <button>5</button>
+                <button>6</button>
+                <button>-</button>
+                <button>1</button>
+                <button>2</button>
+                <button>3</button>
+                <button>+</button>
+                <button>+/-</button>
+                <button>0</button>
+                <button>.</button>
+                <button>=</button>
+        </div>
+    </section>
+    <section id="tempsection">
+        <h2 class="temp-converter">Temperature Converter</h2>
+        <div class="temp-container">
+            <div class="temp-left-box">
+                <div class="frmsect">
+                    <label for="from-value">From:</label>
+                    <div class="input-group">
+                        <input type="number" id="from-value" placeholder="Enter value">
+                        <select id="from-unit">
+                            <option value="Celsius">° Celsius</option>
+                            <option value="Farenheit">° Farenheit</option>
+                            <option value="Kelvin">Kelvin</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="calculate">
+                    <button class="convert-btn">Convert</button>
+                </div>
+                <div class="tosect">
+                    <label for="to-value">To:</label>
+                    <div class="input-group">
+                        <input type="text" id="to-value" placeholder="Result" disabled>
+                        <select id="to-unit">
+                            <option value="Celsius">° Celsius</option>
+                            <option value="Farenheit">° Farenheit</option>
+                            <option value="Kelvin">Kelvin</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="temp-right-box">
+                <h3>Formula Used</h3>
+                <div id="formula-box" style="display:none;"></div>
+            </div>
+        </div>
+    </section>
+    <section id="currsection">
+        <h2>Currency</h2>
+        <div id="curr-container">
+            <form id="curr-form" onsubmit="return false;">
+            <div class="amount">
+                <p style="font-size: 40px;">Enter Amount</p>
+                <input class="box" value="1" type="number" min="0" />
+            </div>
+            <div class="dropdown">
+                <div class="curr-from">
+                    <p style="font-size: 25px;">From:</p>
+                    <div class="curr-select">
+                        <select class="from-currency" name="from"></select>
+                        <img src="https://flagsapi.com/US/flat/64.png" />
+                    </div>
+                </div>
+                <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                <div class="curr-to">
+                    <p style="font-size: 25px;">To:</p>
+                    <div class="curr-select">
+                        <select class="to-currency" name="to"></select>
+                        <img src="https://flagsapi.com/IN/flat/64.png" />
+                    </div>
+                </div>
+            </div>
+            <div class="msg">1 USD = 80 INR</div>
+                <button type="button" id="get-btn">Get Exchange Rates</button>
+            </form>
+        </div>
+    </section>
+    <footer style="height: 100px;"></footer>
+</body>
+</html>
